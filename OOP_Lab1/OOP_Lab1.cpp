@@ -91,8 +91,8 @@ ostream& operator << (ostream& out, dynamic_array<T> a)
 class NumberInDivSystem
 {
 public:
-	NumberInDivSystem();
     int GetNumber();
+	NumberInDivSystem();
     NumberInDivSystem(string number);
     NumberInDivSystem(dynamic_array<int> number);
 	~NumberInDivSystem();
@@ -134,8 +134,8 @@ int main()
 {
     dynamic_array<int> array1;
     array1.push_back(1);
-    array1.push_back(1);
-    array1.push_back(1);
+    array1.push_back(1123);
+    array1.push_back(1124124);
     NumberInDivSystem number1{array1};
     cout << number1.GetNumber();
 }
