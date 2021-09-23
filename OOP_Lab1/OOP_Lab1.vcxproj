@@ -139,7 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IntDinamicArray.cpp" />
+    <ClCompile Include="NumberInModSystem.cpp" />
     <ClCompile Include="OOP_Lab1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="IntDinamicArray.h" />
+    <ClInclude Include="NumberInModSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
