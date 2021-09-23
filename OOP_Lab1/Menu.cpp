@@ -1,18 +1,29 @@
   //-----------------------------------------------------------------------//
  //     Author: Max Solokhin 20-IVT-1-PO-B - BSTU Bryansk student         //
 //-----------------------------------------------------------------------//
+#include "Menu.h"
 
-#pragma once
-
-class Menu
+Menu::Menu()
 {
-public:
-	Menu();
-	~Menu();
-	void MainMenu();
-	void AddNumberMenu();
-	void OperationsMenu();
-	void OutputMenu();
-private:
-	int user_choice_;
-};
+	this->user_choice_ = 0;
+}
+
+Menu::~Menu()
+{
+}
+
+void Menu::MainMenu()
+{
+}
+
+void Menu::AddNumberMenu()
+{
+}
+
+void Menu::OperationsMenu()
+{
+}
+
+void Menu::OutputMenu()
+{
+}
