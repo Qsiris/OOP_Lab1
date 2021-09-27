@@ -4,10 +4,7 @@
 
 #pragma once
 
-#include <iostream>
 #include <string>
-#include "IntDinamicArray.h"
-#include "NumberInModSystem.h"
 
 class NumberInModSystem
 {
