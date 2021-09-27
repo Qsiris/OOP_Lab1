@@ -5,6 +5,7 @@
 #pragma once
 
 #include <string>
+#include "IntDinamicArray.h"
 using namespace std;
 
 class NumberInModSystem
@@ -21,5 +22,5 @@ public:
     ~NumberInModSystem();
 private:
     int number_;
-    IntDinamicArray div_array_{ 0 };
+    IntDinamicArray div_array_;
 };

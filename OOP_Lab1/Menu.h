@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "NumberInModSystem.h";
+
 class Menu
 {
 public:
@@ -16,4 +18,6 @@ public:
 	void OutputMenu();
 private:
 	int user_choice_;
+	int number_of_numbers;
+	NumberInModSystem* array_of_numbers_;
 };

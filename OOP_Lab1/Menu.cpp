@@ -3,6 +3,7 @@
 //-----------------------------------------------------------------------//
 
 #include <iostream>
+#include "IntDinamicArray.h"
 #include "NumberInModSystem.h"
 #include "Menu.h"
 using namespace std;
@@ -12,11 +13,17 @@ const int DELETENUMBERMENU = 2;
 const int OPERATIONSMENU = 3;
 const int OUTPUTMENU = 4;
 
+const int CREATEANDINIT = 1;
+const int CREATEANDINITSOK = 2;
+
 // Конструктор по умолчанию,
 // который инициализирует все поля класса для избежания 
 // непредвиденного поведения
 Menu::Menu()
 {
+	system("chcp 1251");
+	this->array_of_numbers_ = nullptr;
+	this->number_of_numbers = 0;
 	this->user_choice_ = 0;
 }
 
@@ -28,13 +35,12 @@ Menu::~Menu()
 // Главное меню
 void Menu::MainMenu()
 {
-	system("chcp 1251");
 	system("cls");
 	cout << "Вас приветствует программа работы " <<
 		"с системой остаточных классов, выберите действие:" << endl;
 	cout << "1) Создать число\n"
 			<< "2) Операции над числом\n" 
-				<< "3) Вывод числа\n" << endl;
+				<< "4) Вывод числа\n" << endl;
 	cout << "Введите номер из списка: ";
 	cin >> this->user_choice_;
 	switch (user_choice_)
@@ -59,12 +65,46 @@ void Menu::MainMenu()
 // класса числа в системе остаточных классов
 void Menu::AddNumberMenu()
 {
+	IntDinamicArray array_of_sok{ number_of_numbers };
+	int i = 0;
 	system("cls");
-	int number = 0;
 	cout << "Вы выбрали меню создания числа.\nВыберите способ ввода:" << endl;
-	cout << "1) Просто создать\n" << "2) Создать и присвоить значение\n" 
-		<< "3) Создать и присвоить значение в системе остаточных классов\n" << endl;
-	cin >> number;
+	cout << "1) Создать и присвоить значение\n" 
+		 << "2) Создать и присвоить значение в системе остаточных классов\n" << endl;
+	cin >> user_choice_;
+	switch (user_choice_)
+	{
+	case CREATEANDINIT:
+		system("cls");
+		cout << "Введите число:" << endl;
+		cin >> user_choice_;
+		number_of_numbers++;
+		array_of_numbers_ = new NumberInModSystem[number_of_numbers];
+		break;
+	case CREATEANDINITSOK:
+		system("cls");
+		cout << "Введите число в системе остаточных классов (остановка ввода -1):" << endl;
+		while (true)
+		{
+			cout << "a[" << i << "] = ";
+			cin >> user_choice_;
+			if (user_choice_ == -1)
+			{
+				break;
+			}
+			else
+			{
+				array_of_sok.SetNumberByIndex(user_choice_, i);
+				i++;
+			}
+		}
+		number_of_numbers++;
+		array_of_numbers_ = new NumberInModSystem[number_of_numbers]{array_of_sok};
+		break;
+	default:
+		break;
+	}
+	MainMenu();
 }
 
 void Menu::DeleteNumberMenu()
@@ -82,4 +122,13 @@ void Menu::OperationsMenu()
 void Menu::OutputMenu()
 {
 	system("cls");
+	cout << "Вы выбрали меню вывода чисел. Введенные числа:\n";
+	for (int i = 0; i < number_of_numbers; i++)
+	{
+		cout << i + 1 << ") " << array_of_numbers_[i].GetNumber() << endl;
+		for (int j = 0; j < number_of_numbers; j++)
+		{
+			cout << i + 1 << ") " << array_of_numbers_[i].GetArrayElementFromIndex(j) << endl;
+		}
+	}
 }
