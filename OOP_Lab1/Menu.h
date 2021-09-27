@@ -11,6 +11,7 @@ public:
 	~Menu();
 	void MainMenu();
 	void AddNumberMenu();
+	void DeleteNumberMenu();
 	void OperationsMenu();
 	void OutputMenu();
 private:
