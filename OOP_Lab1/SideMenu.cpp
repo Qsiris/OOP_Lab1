@@ -17,6 +17,8 @@ const int CREATEANDINITSOK = 2;
 void Menu::AddNumberMenu()
 {
 	string number;
+	IntDinamicArray number1;
+	int i = 0;
 	while (true)
 	{
 		system("cls");
@@ -29,16 +31,26 @@ void Menu::AddNumberMenu()
 		{
 			break;
 		}
-		switch (this->user_choice_)
+	}
+	switch (this->user_choice_)
+	{
+	case CREATEANDINIT:
+		cout << "Input number: ";
+		cin >> number;
+		break;
+	case CREATEANDINITSOK:
+		cout << "Input array: ";
+		while (true)
 		{
-		case CREATEANDINIT:
-			cout << "Input number: ";
+			cout << "a[" << i << "] = ";
 			cin >> number;
-
-			break;
-		default:
-			break;
+			number1.SetNumberByIndex(atoi(number.c_str()), i);
+			i++;
+			number1.Resize(i + 1);
 		}
+		break;
+	default:
+		break;
 	}
 }
 
@@ -46,16 +58,19 @@ void Menu::AddNumberMenu()
 void Menu::DeleteNumberMenu()
 {
 	system("cls");
+	this->menu_number_ = 0;
 }
 
 // Menu of operations on numbers in the system of residual classes
 void Menu::OperationsMenu()
 {
 	system("cls");
+	this->menu_number_ = 0;
 }
 
 // Console output menu
 void Menu::OutputMenu()
 {
 	system("cls");
+	this->menu_number_ = 0;
 }

@@ -17,6 +17,7 @@ public:
 	void OperationsMenu();
 	void OutputMenu();
 private:
+	int menu_number_;
 	int user_choice_;
 	int number_of_numbers;
 	NumberInModSystem* array_of_numbers_;
