@@ -6,6 +6,7 @@
 
 #include "NumberInModSystem.h";
 
+// Class of the program menu
 class Menu
 {
 public:

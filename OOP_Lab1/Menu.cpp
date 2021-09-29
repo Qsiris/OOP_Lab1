@@ -3,9 +3,12 @@
 //-----------------------------------------------------------------------//
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 #include "IntDinamicArray.h"
 #include "NumberInModSystem.h"
 #include "Menu.h"
+
 using namespace std;
 
 const int ADDNUMBERMENU = 1;
@@ -16,9 +19,9 @@ const int OUTPUTMENU = 4;
 const int CREATEANDINIT = 1;
 const int CREATEANDINITSOK = 2;
 
-// Конструктор по умолчанию,
-// который инициализирует все поля класса для избежания 
-// непредвиденного поведения
+// Default constructor,
+// which initializes all fields of the class to avoid
+// unexpected behavior
 Menu::Menu()
 {
 	system("chcp 1251");
@@ -27,12 +30,12 @@ Menu::Menu()
 	this->user_choice_ = 0;
 }
 
-// Деструктор по умолчанию
+// Default destructor
 Menu::~Menu()
 {
 }
 
-// Главное меню
+// Main menu
 void Menu::MainMenu()
 {
 	system("cls");
@@ -61,8 +64,8 @@ void Menu::MainMenu()
 	}
 }
 
-// Меню создания нового экземляра
-// класса числа в системе остаточных классов
+// Menu for creating a new instance
+// class of a number in the system of residual classes
 void Menu::AddNumberMenu()
 {
 	IntDinamicArray array_of_sok{ number_of_numbers };
@@ -79,7 +82,7 @@ void Menu::AddNumberMenu()
 		cout << "Введите число:" << endl;
 		cin >> user_choice_;
 		number_of_numbers++;
-		array_of_numbers_ = new NumberInModSystem[number_of_numbers];
+		array_of_numbers_ = new NumberInModSystem[number_of_numbers]{(this->user_choice_)};
 		break;
 	case CREATEANDINITSOK:
 		system("cls");
@@ -107,18 +110,19 @@ void Menu::AddNumberMenu()
 	MainMenu();
 }
 
+// Menu for deleting a number
 void Menu::DeleteNumberMenu()
 {
 	system("cls");
 }
 
-// Меню операций над числами в системе остаточных классов
+// Menu of operations on numbers in the system of residual classes
 void Menu::OperationsMenu()
 {
 	system("cls");
 }
 
-// Меню вывода в консоль
+// Console output menu
 void Menu::OutputMenu()
 {
 	system("cls");

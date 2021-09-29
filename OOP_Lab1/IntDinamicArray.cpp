@@ -4,51 +4,52 @@
 
 #include "IntDinamicArray.h"
 
-//  онструктор по умолчанию дл€ динамического массива
-// обнул€ет размер массива и указатель на него
-// ради инициализации всех полей класса
+// Default constructor for dynamic array
+// zeroes the size of the array and the pointer to it
+// for the sake of initializing all the fields of the class
 IntDinamicArray::IntDinamicArray()
 {
     this->array_ = nullptr;
     this->size_ = 0;
 }
 
-//  онструктор с параметром размер массива
-// создает массив указанного размера
+// Constructor with parameter array size
+// creates an array of the specified size
 IntDinamicArray::IntDinamicArray(int size)
 {
     this->array_ = new int[size];
     this->size_ = size;
 }
 
-// √еттер дл€ получени€ размера массива
+// Getter to get the size of the array
 int IntDinamicArray::GetSize()
 {
     return this->size_;
 }
 
-// ѕроцедура изменени€ размера массива
-// принемает размер нового массива
+// Procedure for resizing the array
+// accept the size of the new array
 void IntDinamicArray::Resize(int new_size)
 {
     this->array_ = new int[new_size];
     size_ = new_size;
 }
 
+// Standard destructor
 IntDinamicArray::~IntDinamicArray()
 {
 }
 
-// √еттер дл€ возврата элемента 
-// динамического массива по его индексу.
-// параметр индекс, по которому находитс€ элемент в массиве
+// Getter to return the item
+// dynamic array by its index.
+// parameter is the index at which the element is located in the array
 int IntDinamicArray::GetNumberFromIndex(int index)
 {
     return this->array_[index];
 }
 
-// —еттер позвол€ющий присвоить элементу по индексу новое значение
-// дл€ этого принимает в параметры сам элемент и его индекс
+// Setter that allows you to assign a new value to an element by index
+// for this it takes the element itself and its index as parameters
 void IntDinamicArray::SetNumberByIndex(int element, int index)
 {
     this->array_[index] = element;

@@ -4,6 +4,7 @@
 
 #pragma once
 
+// Dynamic array class
 class IntDinamicArray
 {
 public:

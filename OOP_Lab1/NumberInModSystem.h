@@ -6,8 +6,10 @@
 
 #include <string>
 #include "IntDinamicArray.h"
+
 using namespace std;
 
+// Class number in the residual class system
 class NumberInModSystem
 {
 public:
