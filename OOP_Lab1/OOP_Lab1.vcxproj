@@ -142,7 +142,8 @@
     <ClCompile Include="IntDinamicArray.cpp" />
     <ClCompile Include="NumberInModSystem.cpp" />
     <ClCompile Include="OOP_Lab1.cpp" />
-    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="SideMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h" />

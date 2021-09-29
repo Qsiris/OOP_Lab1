@@ -2,9 +2,8 @@
  //     Author: Max Solokhin 20-IVT-1-PO-B - BSTU Bryansk student         //
 //-----------------------------------------------------------------------//
 
-#pragma once
-
 #include "NumberInModSystem.h";
+#pragma once
 
 // Class of the program menu
 class Menu
