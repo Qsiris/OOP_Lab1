@@ -32,7 +32,7 @@ int IntDinamicArray::GetSize()
 void IntDinamicArray::Resize(int new_size)
 {
     this->array_ = new int[new_size];
-    size_ = new_size;
+    this->size_ = new_size;
 }
 
 // Standard destructor

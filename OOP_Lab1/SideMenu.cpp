@@ -9,10 +9,14 @@
 #include "NumberInModSystem.h"
 #include "Menu.h"
 
+const int CREATEANDINIT = 1;
+const int CREATEANDINITSOK = 2;
+
 // Menu for creating a new instance
 // class of a number in the system of residual classes
 void Menu::AddNumberMenu()
 {
+	string number;
 	while (true)
 	{
 		system("cls");
@@ -23,6 +27,16 @@ void Menu::AddNumberMenu()
 		cin >> this->user_choice_;
 		if (this->user_choice_ < 3 && this->user_choice_ > 0)
 		{
+			break;
+		}
+		switch (this->user_choice_)
+		{
+		case CREATEANDINIT:
+			cout << "Input number: ";
+			cin >> number;
+
+			break;
+		default:
 			break;
 		}
 	}

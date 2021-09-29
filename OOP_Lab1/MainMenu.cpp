@@ -16,9 +16,6 @@ const int DELETENUMBERMENU = 2;
 const int OPERATIONSMENU = 3;
 const int OUTPUTMENU = 4;
 
-const int CREATEANDINIT = 1;
-const int CREATEANDINITSOK = 2;
-
 // Default constructor,
 // which initializes all fields of the class to avoid
 // unexpected behavior
