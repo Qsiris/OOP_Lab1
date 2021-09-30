@@ -33,6 +33,11 @@ void NumberInModSystem::PrintNumber()
     cout << number_ << endl;
 }
 
+void NumberInModSystem::SetNumber(string number)
+{
+    this->number_ = atoi(number.c_str());
+}
+
 // Sets the value to the residual class
 // (writing a number to a specific cell by index)
 void NumberInModSystem::SetElementByIndex(int element, int index)
@@ -57,7 +62,7 @@ NumberInModSystem::NumberInModSystem()
 
 // Constructor with parameter string (number entered as string
 // translated first into sishnuyu string, and then into int)
-NumberInModSystem::NumberInModSystem(std::string number)
+NumberInModSystem::NumberInModSystem(string number)
 {
     this->number_ = atoi(number.c_str());
 }

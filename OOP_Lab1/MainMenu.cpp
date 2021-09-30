@@ -23,9 +23,12 @@ const int EXITTHEPROGRAMM = 5;
 // unexpected behavior
 Menu::Menu()
 {	this->array_of_numbers_ = nullptr;
-	this->number_of_numbers = 0;
 	this->user_choice_ = 0;
 	this->menu_number_ = 0;
+	this->current_element_index = 0;
+	this->size_of_array_ = 0;
+	this->number_dinamic_array_;
+	this->number_str_ = "";
 }
 
 // Default destructor

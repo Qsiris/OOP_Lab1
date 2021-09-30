@@ -1,5 +1,5 @@
-//-----------------------------------------------------------------------//
-//     Author: Max Solokhin 20-IVT-1-PO-B - BSTU Bryansk student         //
+  //-----------------------------------------------------------------------//
+ //     Author: Max Solokhin 20-IVT-1-PO-B - BSTU Bryansk student         //
 //-----------------------------------------------------------------------//
 
 #include <iostream>
@@ -16,9 +16,6 @@ const int CREATEANDINITSOK = 2;
 // class of a number in the system of residual classes
 void Menu::AddNumberMenu()
 {
-	string number;
-	IntDinamicArray number1;
-	int i = 0;
 	while (true)
 	{
 		system("cls");
@@ -36,17 +33,21 @@ void Menu::AddNumberMenu()
 	{
 	case CREATEANDINIT:
 		cout << "Input number: ";
-		cin >> number;
+		cin >> this->number_str_;
+		this->array_of_numbers_ =
+			new NumberInModSystem[this->size_of_array_];
+		this->array_of_numbers_[this->current_element_index].SetNumber(this->number_str_);
+		this->size_of_array_++;
 		break;
 	case CREATEANDINITSOK:
-		cout << "Input array: ";
+		cout << "Input array (to stop input !): ";
 		while (true)
-		{
+		{/*
 			cout << "a[" << i << "] = ";
 			cin >> number;
 			number1.SetNumberByIndex(atoi(number.c_str()), i);
 			i++;
-			number1.Resize(i + 1);
+			number1.Resize(i + 1);*/
 		}
 		break;
 	default:
@@ -61,7 +62,8 @@ void Menu::DeleteNumberMenu()
 	this->menu_number_ = 0;
 }
 
-// Menu of operations on numbers in the system of residual classes
+// Menu of operations on numbers 
+// in the system of residual classes
 void Menu::OperationsMenu()
 {
 	system("cls");

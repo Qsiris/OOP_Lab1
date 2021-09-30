@@ -16,6 +16,7 @@ public:
     int GetNumber();
     void PrintArray();
     void PrintNumber();
+    void SetNumber(string number);
     void SetElementByIndex(int element, int index);
     int GetArrayElementFromIndex(int index);
     NumberInModSystem();
