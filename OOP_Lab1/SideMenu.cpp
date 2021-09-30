@@ -38,16 +38,18 @@ void Menu::AddNumberMenu()
 			new NumberInModSystem[this->size_of_array_];
 		this->array_of_numbers_[this->current_element_index].SetNumber(this->number_str_);
 		this->size_of_array_++;
+		this->current_element_index++;
 		break;
 	case CREATEANDINITSOK:
 		cout << "Input array (to stop input !): ";
 		while (true)
-		{/*
-			cout << "a[" << i << "] = ";
-			cin >> number;
-			number1.SetNumberByIndex(atoi(number.c_str()), i);
-			i++;
-			number1.Resize(i + 1);*/
+		{
+			this->array_of_numbers_ =
+				new NumberInModSystem[this->size_of_array_];
+			this->array_of_numbers_[this->current_element_index].
+				SetElementByIndex(atoi(this->number_str_.c_str()), this->current_element_index);
+			this->size_of_array_++;
+			this->current_element_index++;
 		}
 		break;
 	default:
